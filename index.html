@@ -1,116 +1,55 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mk brands - Bomber Modi Game</title>
-    
-    <link rel="icon" type="image/png" href="image/icon.png">
-
+    <title>MK BRANDS - BOMBER MODI</title>
     <style>
-        body {
-            margin: 0; padding: 0;
-            background-color: #000;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: white;
-            display: flex; flex-direction: column; align-items: center;
-        }
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; padding: 0; }
+        header { background-color: #1a1a1a; padding: 20px; border-bottom: 3px solid #f1c40f; }
+        .logo-small { width: 50px; vertical-align: middle; margin-right: 10px; }
+        .hero { padding: 40px 20px; }
+        .welcome-img { width: 90%; max-width: 500px; border-radius: 15px; margin-bottom: 30px; border: 2px solid #333; }
+        
+        /* Buttons Style */
+        .btn-box { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .btn { width: 280px; padding: 15px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; transition: 0.3s; display: block; }
+        
+        .pc-btn { background-color: #f1c40f; color: #000; border: 2px solid #f1c40f; }
+        .pc-btn:hover { background-color: #d4ac0d; }
+        
+        .apk-btn { background-color: transparent; color: #2ecc71; border: 2px solid #2ecc71; }
+        .apk-btn:hover { background-color: #2ecc71; color: #000; }
 
-        /* Top Navigation Bar */
-        .navbar {
-            width: 100%; padding: 15px;
-            background: #1a1a1a;
-            display: flex; justify-content: center; align-items: center;
-            gap: 12px; border-bottom: 3px solid #ffcc00;
-            position: sticky; top: 0; z-index: 100;
-        }
-
-        .navbar img { height: 45px; width: auto; }
-        .navbar span { font-size: 24px; font-weight: 800; color: #ffcc00; letter-spacing: 1px; }
-
-        /* Full width images */
-        .page-img {
-            width: 100%;
-            max-width: 1100px;
-            display: block;
-        }
-
-        /* Download Section */
-        .download-area {
-            width: 100%; background: #111;
-            padding: 70px 0; text-align: center;
-            border-top: 2px solid #333;
-        }
-
-        .game-logo { width: 90px; margin-bottom: 20px; }
-
-        .download-btn {
-            background: linear-gradient(45deg, #ffcc00, #ff9900);
-            color: black; padding: 22px 55px;
-            font-size: 28px; font-weight: bold;
-            text-decoration: none; border-radius: 60px;
-            display: inline-block; transition: 0.4s;
-            box-shadow: 0px 10px 30px rgba(255, 204, 0, 0.3);
-            text-transform: uppercase;
-            border: none; cursor: pointer;
-        }
-
-        /* Hover effect for PC */
-        .download-btn:hover {
-            transform: scale(1.2);
-            box-shadow: 0px 20px 50px rgba(255, 204, 0, 0.5);
-        }
-
-        .info-text { margin-top: 25px; color: #777; font-size: 16px; }
+        .info { margin-top: 20px; color: #888; font-size: 14px; }
+        h1 { color: #f1c40f; margin: 0; display: inline-block; vertical-align: middle; }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <img src="image/icon.png" alt="Mk brands Logo"> 
-        <span>MK BRANDS - BOMBER MODI</span>
+<header>
+    <img src="icon.png" alt="Logo" class="logo-small">
+    <h1>MK BRANDS</h1>
+</header>
+
+<div class="hero">
+    <img src="welcome.png" alt="Bomber Modi" class="welcome-img">
+    
+    <div class="btn-box">
+        <a href="bomberman.exe" class="btn pc-btn">DOWNLOAD FOR COMPUTER</a>
+        
+        <a href="#" class="btn apk-btn" onclick="alert('Android Version is under development. You can visit and explore the site!')">VISIT ANDROID VERSION</a>
     </div>
 
-    <img src="image/welcome.png" alt="Welcome to Bomber Modi" class="page-img">
-    <img src="image/feature.png" alt="Game Features" class="page-img">
-
-    <div class="download-area">
-        <img src="image/icon.png" alt="Logo" class="game-logo"><br>
-
-        <button onclick="handleDownload()" class="download-btn" id="mainBtn">
-            Download for PC
-        </button>
-
-        <p class="info-text">
-            Developed by <strong>Mk brands</strong><br>
-            <span id="systemText">Detecting System...</span>
-        </p>
+    <div class="info">
+        <p><strong>Developed by Mk brands</strong></p>
+        <p>PC Download: Available (19MB) | APK: Coming Soon</p>
     </div>
+</div>
 
-    <script>
-        // Check if user is on Mobile
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        const systemText = document.getElementById('systemText');
-        const mainBtn = document.getElementById('mainBtn');
-
-        if (isMobile) {
-            systemText.innerHTML = "Mobile Device Detected";
-            mainBtn.innerHTML = "Not Available for Mobile";
-            mainBtn.style.opacity = "0.7"; // Thoda halka dikhega mobile par
-        } else {
-            systemText.innerHTML = "Windows PC Detected (19MB)";
-        }
-
-        function handleDownload() {
-            if (isMobile) {
-                // Mobile user ko error message dikhayega
-                alert("Sorry! Bomber Modi is only available for Windows PC. Please open this link on a computer to download.");
-            } else {
-                // PC user ke liye download start kar dega
-                window.location.href = "bomberman.exe";
-            }
-        }
-    </script>
+<footer style="margin-top: 50px; padding: 20px; color: #444; font-size: 12px;">
+    &copy; 2026 MK BRANDS. All Rights Reserved.
+</footer>
 
 </body>
 </html>

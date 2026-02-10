@@ -3,53 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK BRANDS</title>
+    <title>MK BRANDS - BOMBER MODI</title>
     <style>
-        body { 
-            background: #000 url('welcome.png') no-repeat center center fixed; 
-            background-size: cover; 
-            color: white; 
-            text-align: center; 
-            font-family: 'Segoe UI', sans-serif;
+        /* Pura page welcome.png se bhar jayega */
+        body, html {
             margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #000;
         }
-        .main-card {
-            background: rgba(0,0,0,0.85);
-            margin: 30px auto;
-            padding: 25px;
+
+        /* Pehla Section: Full Screen Welcome Image */
+        .welcome-section {
+            height: 100vh; /* Poori screen ki height */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('welcome.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .logo { width: 80px; border-radius: 50%; border: 3px solid #f1c40f; margin-bottom: 20px; }
+        h1 { font-size: 3.5rem; color: #f1c40f; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin: 10px 0; }
+        
+        .btn-group { margin-top: 30px; }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 10px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .pc-btn { background: #f1c40f; color: #000; }
+        .apk-btn { border: 2px solid #2ecc71; color: #2ecc71; background: rgba(0,0,0,0.5); }
+
+        /* Dusra Section: Scroll karne par Feature Photo */
+        .feature-section {
+            padding: 80px 20px;
+            background: #111;
+            text-align: center;
+            color: white;
+        }
+        .feature-img {
+            width: 90%;
+            max-width: 900px;
             border-radius: 20px;
-            border: 2px solid #f1c40f;
-            max-width: 450px;
-            box-shadow: 0px 0px 20px rgba(241, 196, 15, 0.3);
+            box-shadow: 0 0 30px rgba(241, 196, 15, 0.2);
+            border: 2px solid #333;
         }
-        /* Feature photo ki setting */
-        .feature-box img { 
-            width: 100%; 
-            max-width: 380px;
-            border-radius: 10px; 
-            margin: 20px 0;
-            border: 1px solid #444;
-        }
-        .logo { width: 60px; border-radius: 50%; border: 1px solid #f1c40f; }
-        .btn-pc { background: #f1c40f; color: black; padding: 15px; text-decoration: none; display: block; font-weight: bold; border-radius: 10px; margin: 10px 0; }
-        .btn-apk { border: 2px solid #2ecc71; color: #2ecc71; padding: 12px; text-decoration: none; display: block; border-radius: 10px; margin-top: 10px; }
+        .scroll-text { margin-top: 20px; color: #888; font-style: italic; }
     </style>
 </head>
 <body>
-    <div class="main-card">
-        <img src="icon.png" class="logo">
-        <h1 style="color:#f1c40f; margin: 10px 0;">MK BRANDS</h1>
-        
-        <div class="feature-box">
-            <img src="feature.png" alt="Game Feature Photo">
-        </div>
 
-        <p>BOMBER MODI - Action Re-defined</p>
+    <div class="welcome-section">
+        <img src="icon.png" class="logo" alt="MK Brands Logo">
+        <h1>MK BRANDS</h1>
+        <p style="font-size: 1.5rem;">BOMBER MODI</p>
         
-        <a href="bomberman.exe" class="btn-pc">DOWNLOAD FOR PC</a>
-        <a href="#" class="btn-apk" onclick="alert('Android Version Coming Soon!')">VISIT ANDROID VERSION</a>
-        
-        <p style="font-size:11px; color:#888; margin-top:15px;">Official Site by Mk brands</p>
+        <div class="btn-group">
+            <a href="bomberman.exe" class="btn pc-btn">DOWNLOAD FOR COMPUTER</a>
+            <a href="#" class="btn apk-btn" onclick="alert('Android Version is coming soon!')">VISIT ANDROID VERSION</a>
+        </div>
+        <p class="scroll-text">Scroll down to see more ↓</p>
     </div>
+
+    <div class="feature-section">
+        <h2 style="color: #f1c40f; font-size: 2.5rem;">GAME FEATURES</h2>
+        <img src="feature.png" class="feature-img" alt="Feature Image">
+        <p style="margin-top: 20px; font-size: 1.2rem;">Experience high-quality action gameplay by Mk brands.</p>
+    </div>
+
+    <footer style="padding: 40px; background: #000; text-align: center; color: #444; font-size: 14px;">
+        &copy; 2026 MK BRANDS | All Rights Reserved
+    </footer>
+
 </body>
 </html>

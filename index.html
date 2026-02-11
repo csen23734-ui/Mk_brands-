@@ -23,7 +23,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #050505; color: #fff; overflow-x: hidden; }
 
-        /* Hero Section (Welcome Page) */
+        /* Hero Section */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('welcome.png') center/cover no-repeat;
@@ -33,9 +33,9 @@
 
         .main-logo { width: 130px; border-radius: 20%; margin-bottom: 20px; box-shadow: 0 0 30px rgba(241, 196, 15, 0.4); }
         h1 { font-size: 4rem; color: #f1c40f; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 5px; }
-        p.tagline { font-size: 1.4rem; color: #ddd; margin-bottom: 40px; font-weight: 300; }
+        p.tagline { font-size: 1.4rem; color: #ddd; margin-bottom: 40px; }
 
-        /* Play Store Style Download Buttons */
+        /* Buttons */
         .btn-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
         .btn { 
             padding: 18px 45px; 
@@ -45,37 +45,53 @@
             transition: 0.4s ease; 
             font-size: 1.2rem; 
             text-transform: uppercase;
+            cursor: pointer;
         }
-        .btn-pc { background-color: #f1c40f; color: #000; box-shadow: 0 5px 20px rgba(241, 196, 15, 0.3); }
+        .btn-pc { background-color: #f1c40f; color: #000; }
         .btn-apk { border: 2.5px solid #2ecc71; color: #2ecc71; background: transparent; }
-        .btn:hover { transform: translateY(-8px); filter: brightness(1.1); box-shadow: 0 10px 25px rgba(255,255,255,0.1); }
+        .btn:hover { transform: translateY(-8px); filter: brightness(1.1); }
 
-        /* Gameplay Feature (Badi PNG Image) */
+        /* Feature Section (Badi PNG Image) */
         .features { padding: 100px 15px; text-align: center; background: #000; }
-        .features h2 { color: #f1c40f; margin-bottom: 50px; font-size: 3rem; letter-spacing: 2px; }
+        .features h2 { color: #f1c40f; margin-bottom: 50px; font-size: 3rem; }
         
-        /* Aapne kaha tha PNG badi honi chahiye scroll par */
         .feature-img { 
             width: 95%; 
             max-width: 1300px; 
             border-radius: 30px; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.9);
             border: 1px solid #333;
-            transition: 0.6s;
         }
-        .feature-img:hover { transform: scale(1.03); border-color: #f1c40f; }
 
-        /* Mobile Optimization: Perfect for Android/iPhone */
+        /* Mobile Optimization */
         @media (max-width: 600px) {
             h1 { font-size: 2.8rem; }
-            p.tagline { font-size: 1.1rem; }
-            .hero { padding-top: 60px; }
             .feature-img { width: 100%; border-radius: 15px; }
-            .btn { width: 85%; padding: 15px; text-align: center; }
+            .btn { width: 85%; }
         }
 
-        /* Secret Admin Entry (Sirf Dr. Leo ke liye) */
-        #leo-admin { position: fixed; bottom: 10px; right: 10px; opacity: 0.05; cursor: pointer; color: #fff; font-size: 10px; }
+        /* Stylish Admin Button - Ab Ye Saaf Dikhega */
+        #leo-admin { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background: rgba(241, 196, 15, 0.15); 
+            color: #f1c40f; 
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1.5px solid #f1c40f;
+            cursor: pointer; 
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+            z-index: 9999;
+            text-transform: uppercase;
+        }
+        #leo-admin:hover {
+            background: #f1c40f;
+            color: #000;
+            box-shadow: 0 0 15px #f1c40f;
+        }
     </style>
 </head>
 <body>
@@ -83,28 +99,28 @@
     <div class="hero">
         <img src="icon.png" alt="Mk brands Logo" class="main-logo">
         <h1>MK BRANDS</h1>
-        <p class="tagline">The Home of Bomber Modi Adventure</p>
+        <p class="tagline">Official Home of Bomber Modi Adventure</p>
         
         <div class="btn-group">
-            <a href="bomberman.exe" class="btn btn-pc" onclick="gtag('event', 'pc_download', {'event_category': 'Engagement'});">Download for PC</a>
-            <a href="#" class="btn btn-apk" onclick="alert('Dr. Leo, Android version is under development. Coming Soon!')">Android App</a>
+            <a href="bomberman.exe" class="btn btn-pc" onclick="gtag('event', 'pc_download');">Download for PC</a>
+            <a href="#" class="btn btn-apk" onclick="alert('Coming Soon for Android!')">Android App</a>
         </div>
     </div>
 
     <div class="features">
         <h2>GAMEPLAY PREVIEW</h2>
         <img src="feature.png" alt="Mk brands Gameplay" class="feature-img">
-        <p style="margin-top:30px; color:#777; font-size: 1.2rem;">Experience Next-Gen 2D Combat</p>
     </div>
 
-    <div id="leo-admin" onclick="openAdmin()">MK</div>
+    <div id="leo-admin" onclick="openAdmin()">Admin MK</div>
 
     <script>
         function openAdmin() {
-            let p = prompt("Enter Secret Admin Key:");
+            let p = prompt("Enter Secret Key:");
             if(p === "leo123") { 
-                alert("Welcome Dr. Leo! Redirecting to Analytics...");
                 window.location.href = "https://analytics.google.com/";
+            } else if (p !== null) {
+                alert("Galat Password, Dr. Leo!");
             }
         }
     </script>

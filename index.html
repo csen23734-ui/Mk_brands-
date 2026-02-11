@@ -5,91 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mk brands - Official Game Site</title>
 
-    <meta name="description" content="Official Mk brands website. Download Bomber Modi for PC.">
-    <meta name="keywords" content="Mk brands, Mk_brands, Bomber Modi, Download game">
+    <meta name="description" content="Official Mk brands website. Download Bomber Modi for PC and Android.">
+    <meta name="keywords" content="Mk brands, Mk_brands, Bomber Modi, Download game, Leo">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ID_HERE"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8N22BEVKNX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'YOUR_ID_HERE'); // <-- Yahan G-XXXXXXXXXX daalein
+      gtag('config', 'G-8N22BEVKNX');
     </script>
 
     <style>
-        /* Mobile aur PC dono ke liye perfect layout */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* Hero Section (Welcome Page) */
+        /* Welcome Section - Play Store Style */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('welcome.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('welcome.png') center/cover no-repeat;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
             padding: 20px;
         }
 
-        .main-logo { width: 100px; border-radius: 20%; margin-bottom: 15px; box-shadow: 0 0 20px rgba(241, 196, 15, 0.5); }
-        h1 { font-size: 3.5rem; color: #f1c40f; text-transform: uppercase; letter-spacing: 2px; }
-        p { font-size: 1.2rem; margin-bottom: 30px; color: #ccc; }
+        .main-logo { width: 120px; border-radius: 25px; margin-bottom: 20px; box-shadow: 0 0 25px rgba(241, 196, 15, 0.6); }
+        h1 { font-size: 3.5rem; color: #f1c40f; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; }
+        p.tagline { font-size: 1.3rem; margin-bottom: 35px; color: #eee; font-style: italic; }
 
-        /* Download Buttons */
-        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        .btn { padding: 15px 35px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: 0.3s; font-size: 1.1rem; }
-        .btn-pc { background-color: #f1c40f; color: #000; }
-        .btn-apk { border: 2px solid #2ecc71; color: #2ecc71; }
-        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+        /* Buttons Section */
+        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .btn { padding: 18px 40px; border-radius: 12px; font-weight: bold; text-decoration: none; transition: 0.4s; font-size: 1.1rem; cursor: pointer; border: none; }
+        .btn-pc { background-color: #f1c40f; color: #000; box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4); }
+        .btn-apk { border: 2px solid #2ecc71; color: #2ecc71; background: transparent; }
+        .btn:hover { transform: translateY(-5px); filter: brightness(1.2); }
 
-        /* Feature Section (Badi PNG Image wala part) */
-        .features { padding: 60px 10px; text-align: center; background: #0a0a0a; }
-        .features h2 { color: #f1c40f; margin-bottom: 30px; font-size: 2.5rem; }
+        /* Feature Section (Badi PNG Image) */
+        .features { padding: 80px 15px; text-align: center; background: #080808; border-top: 2px solid #222; }
+        .features h2 { color: #f1c40f; margin-bottom: 40px; font-size: 2.8rem; }
         
-        /* Aapne kaha tha PNG badi honi chahiye scroll par */
+        /* PNG badi honi chahiye scroll par */
         .feature-img { 
-            width: 95%; 
-            max-width: 1200px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            margin-top: 20px;
-            border: 2px solid #333;
+            width: 98%; 
+            max-width: 1250px; 
+            border-radius: 25px; 
+            box-shadow: 0 15px 45px rgba(0,0,0,0.9);
+            border: 1px solid #444;
+            transition: 0.5s;
         }
+        .feature-img:hover { transform: scale(1.02); }
 
-        /* Mobile View Fixes */
+        /* Mobile Optimization */
         @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            .hero { background-size: cover; }
-            .feature-img { width: 100%; border-radius: 10px; }
+            h1 { font-size: 2.5rem; }
+            .hero { background-size: cover; padding-top: 50px; }
+            .feature-img { width: 100%; border-radius: 15px; }
+            .btn { width: 80%; }
         }
 
-        /* Secret Admin Entry */
-        #secret-admin { position: fixed; bottom: 5px; right: 5px; opacity: 0.1; cursor: pointer; color: #fff; font-size: 12px; }
+        /* Hidden Admin Access */
+        #leo-admin { position: fixed; bottom: 8px; right: 8px; opacity: 0.05; cursor: pointer; font-size: 12px; }
     </style>
 </head>
 <body>
 
     <div class="hero">
-        <img src="icon.png" alt="Mk brands Logo" class="main-logo">
+        <img src="icon.png" alt="Mk brands" class="main-logo">
         <h1>MK BRANDS</h1>
-        <p>Experience the thrill of Bomber Modi</p>
+        <p class="tagline">Official Home of Bomber Modi</p>
         
         <div class="btn-group">
-            <a href="bomberman.exe" class="btn btn-pc" onclick="gtag('event', 'pc_download')">DOWNLOAD FOR PC</a>
-            <a href="#" class="btn btn-apk" onclick="alert('Android version coming soon!')">ANDROID APP</a>
+            <a href="bomberman.exe" class="btn btn-pc" onclick="gtag('event', 'pc_game_download', {'event_category': 'Engagement', 'event_label': 'PC'});">DOWNLOAD PC</a>
+            <a href="#" class="btn btn-apk" onclick="alert('Android Version is coming soon! Stay tuned, Dr. Leo.')">ANDROID APP</a>
         </div>
     </div>
 
     <div class="features">
         <h2>GAMEPLAY PREVIEW</h2>
-        <img src="feature.png" alt="Game Feature" class="feature-img">
-        <p style="margin-top:20px; color:#888;">High Quality Graphics & Intense Action</p>
+        <img src="feature.png" alt="Game Preview" class="feature-img">
+        <p style="margin-top:25px; color:#aaa; font-size: 1.1rem;">High-Quality Graphics & Immersive Experience</p>
     </div>
 
-    <div id="secret-admin" onclick="openAdmin()">MK</div>
+    <div id="leo-admin" onclick="checkAdmin()">MK</div>
 
     <script>
-        function openAdmin() {
-            let p = prompt("Enter Key:");
-            if(p === "leo123") { // Aapka secret password
+        function checkAdmin() {
+            let pass = prompt("Enter Secret Key:");
+            if(pass === "leo123") { // Aapka password
+                alert("Opening your Live Dashboard...");
                 window.location.href = "https://analytics.google.com/";
             }
         }

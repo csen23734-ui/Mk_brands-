@@ -3,88 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK BRANDS - BOMBER MODI</title>
+    <title>Mk brands - Official Game Site</title>
+
+    <meta name="description" content="Official Mk brands website. Download Bomber Modi for PC.">
+    <meta name="keywords" content="Mk brands, Mk_brands, Bomber Modi, Download game">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ID_HERE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_ID_HERE'); // <-- Yahan G-XXXXXXXXXX daalein
+    </script>
+
     <style>
-        /* Pura page welcome.png se bhar jayega */
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #000;
+        /* Mobile aur PC dono ke liye perfect layout */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+
+        /* Hero Section (Welcome Page) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('welcome.png') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            padding: 20px;
         }
 
-        /* Pehla Section: Full Screen Welcome Image */
-        .welcome-section {
-            height: 100vh; /* Poori screen ki height */
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('welcome.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
+        .main-logo { width: 100px; border-radius: 20%; margin-bottom: 15px; box-shadow: 0 0 20px rgba(241, 196, 15, 0.5); }
+        h1 { font-size: 3.5rem; color: #f1c40f; text-transform: uppercase; letter-spacing: 2px; }
+        p { font-size: 1.2rem; margin-bottom: 30px; color: #ccc; }
 
-        .logo { width: 80px; border-radius: 50%; border: 3px solid #f1c40f; margin-bottom: 20px; }
-        h1 { font-size: 3.5rem; color: #f1c40f; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin: 10px 0; }
+        /* Download Buttons */
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .btn { padding: 15px 35px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: 0.3s; font-size: 1.1rem; }
+        .btn-pc { background-color: #f1c40f; color: #000; }
+        .btn-apk { border: 2px solid #2ecc71; color: #2ecc71; }
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+        /* Feature Section (Badi PNG Image wala part) */
+        .features { padding: 60px 10px; text-align: center; background: #0a0a0a; }
+        .features h2 { color: #f1c40f; margin-bottom: 30px; font-size: 2.5rem; }
         
-        .btn-group { margin-top: 30px; }
-        .btn {
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 10px;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .pc-btn { background: #f1c40f; color: #000; }
-        .apk-btn { border: 2px solid #2ecc71; color: #2ecc71; background: rgba(0,0,0,0.5); }
-
-        /* Dusra Section: Scroll karne par Feature Photo */
-        .feature-section {
-            padding: 80px 20px;
-            background: #111;
-            text-align: center;
-            color: white;
-        }
-        .feature-img {
-            width: 90%;
-            max-width: 900px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(241, 196, 15, 0.2);
+        /* Aapne kaha tha PNG badi honi chahiye scroll par */
+        .feature-img { 
+            width: 95%; 
+            max-width: 1200px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            margin-top: 20px;
             border: 2px solid #333;
         }
-        .scroll-text { margin-top: 20px; color: #888; font-style: italic; }
+
+        /* Mobile View Fixes */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .hero { background-size: cover; }
+            .feature-img { width: 100%; border-radius: 10px; }
+        }
+
+        /* Secret Admin Entry */
+        #secret-admin { position: fixed; bottom: 5px; right: 5px; opacity: 0.1; cursor: pointer; color: #fff; font-size: 12px; }
     </style>
 </head>
 <body>
 
-    <div class="welcome-section">
-        <img src="icon.png" class="logo" alt="MK Brands Logo">
+    <div class="hero">
+        <img src="icon.png" alt="Mk brands Logo" class="main-logo">
         <h1>MK BRANDS</h1>
-        <p style="font-size: 1.5rem;">BOMBER MODI</p>
+        <p>Experience the thrill of Bomber Modi</p>
         
         <div class="btn-group">
-            <a href="bomberman.exe" class="btn pc-btn">DOWNLOAD FOR COMPUTER</a>
-            <a href="#" class="btn apk-btn" onclick="alert('Android Version is coming soon!')">VISIT ANDROID VERSION</a>
+            <a href="bomberman.exe" class="btn btn-pc" onclick="gtag('event', 'pc_download')">DOWNLOAD FOR PC</a>
+            <a href="#" class="btn btn-apk" onclick="alert('Android version coming soon!')">ANDROID APP</a>
         </div>
-        <p class="scroll-text">Scroll down to see more ↓</p>
     </div>
 
-    <div class="feature-section">
-        <h2 style="color: #f1c40f; font-size: 2.5rem;">GAME FEATURES</h2>
-        <img src="feature.png" class="feature-img" alt="Feature Image">
-        <p style="margin-top: 20px; font-size: 1.2rem;">Experience high-quality action gameplay by Mk brands.</p>
+    <div class="features">
+        <h2>GAMEPLAY PREVIEW</h2>
+        <img src="feature.png" alt="Game Feature" class="feature-img">
+        <p style="margin-top:20px; color:#888;">High Quality Graphics & Intense Action</p>
     </div>
 
-    <footer style="padding: 40px; background: #000; text-align: center; color: #444; font-size: 14px;">
-        &copy; 2026 MK BRANDS | All Rights Reserved
-    </footer>
+    <div id="secret-admin" onclick="openAdmin()">MK</div>
+
+    <script>
+        function openAdmin() {
+            let p = prompt("Enter Key:");
+            if(p === "leo123") { // Aapka secret password
+                window.location.href = "https://analytics.google.com/";
+            }
+        }
+    </script>
 
 </body>
 </html>
